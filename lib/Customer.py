@@ -28,15 +28,16 @@ class Customer:
 
     @classmethod
     def all(cls, new_customer_instance):
-        cls.all_instances.append(new_customer_instance.fullName)
+        # cls.all_instances.append(new_customer_instance.fullName)
+        cls.all_instances.append(new_customer_instance)
         pass
 
     @classmethod
     def print_all_instances(cls):
-        print([fullname for fullname in cls.all_instances])
+        print([fullname.fullName for fullname in cls.all_instances])
 
 # uncomment to see magic :)
 customer1 = Customer("Gad", "Ongoro") # Customer case_0
 customer2 = Customer("Muhammad", "Gaddafi") # Customer case_1
 #customer1.full_name() #returns the customer's full name
-# Customer.print_all_instances() #prints a list of all customer names
+#Customer.print_all_instances() #prints a list of all customer names

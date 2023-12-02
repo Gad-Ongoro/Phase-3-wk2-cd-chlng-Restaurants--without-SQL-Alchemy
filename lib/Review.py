@@ -1,11 +1,12 @@
 from Customer import Customer
+from Restaurant import Restaurant
 
 class Review(Customer):
     all_reviews = []
 
     def __init__(self, customer, restaurant, rating):
-        self.customer = customer
-        self.restaurant = restaurant
+        self.rest_customer = customer
+        self.rest_restaurant = restaurant
         self._rating = rating
         Review.all(self)
         if type(rating) in (int,):
@@ -26,9 +27,12 @@ class Review(Customer):
     rest_rating = property(rating, rating_setter)
 
     def customer(self):
+        # returns the customer object for that review
+        return(Customer.all_instances)
         pass
 
     def restaurant(self):
+        return(Restaurant.all)
         pass
 
     @classmethod
@@ -44,7 +48,9 @@ class Review(Customer):
 my_restaurant_review_0 = Review("Gad", "Nairobi", 7) #case_0
 my_restaurant_review_2 = Review("Ongoro", "Kenya", 8) #case_1
 
-# my_restaurant_review_2.rest_rating #calling rating() returns a rating of an instance
-# my_restaurant_review_0.rating() #calling rating() returns a rating of an instance
-# print(Review.all_reviews) #prints the object(s) location
-# Review.print_all_reviews() #prints the object(s) location
+#my_restaurant_review_2.rest_rating #calling rating() returns a rating of an instance
+#my_restaurant_review_0.rating() #calling rating() returns a rating of an instance
+#print(Review.all_reviews) #prints the object(s) location
+#Review.print_all_reviews() #prints the object(s) location
+# print(my_restaurant_review_0.customer()) # returns the customer object for a review and doesn't change the customer
+print(my_restaurant_review_0.restaurant()) # returns the restaurant object for that given review

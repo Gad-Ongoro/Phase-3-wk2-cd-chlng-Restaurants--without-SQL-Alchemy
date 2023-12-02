@@ -1,8 +1,10 @@
 class Restaurant:
+    all = []
     def __init__(self, restaurant_name):
         if type(restaurant_name) not in (str,):
             raise ValueError("Wrong Input")            
         self._name = restaurant_name
+        Restaurant.add_all_instances(self)
 
     def name(self): #getter
         return(self._name)
@@ -17,6 +19,10 @@ class Restaurant:
     def customers(self):
         # Returns a **unique** list of all customers who have reviewed a particular restaurant
         pass
+
+    @classmethod
+    def add_all_instances(cls, new_restaurant):
+        cls.all.append(new_restaurant)
 
     restaurant_name = property(name, restaurant_name_setter)
 
