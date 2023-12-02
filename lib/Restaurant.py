@@ -19,8 +19,9 @@ class Restaurant:
         pass
 
     restaurant_name = property(name, restaurant_name_setter)
-    
-restaurant_0 = Restaurant("12345") # Restaurant case_0
-# print(restaurant_0.name()) #calling the name() method
 
-# restaurant_0.restaurant_name = "678910" #raises an Error on attempt to change the name 
+# uncomment to see magic :)
+restaurant_0 = Restaurant("12345") # Restaurant case_0
+# print(restaurant_0.name()) #calling the name() method to display the restaurant name
+
+# restaurant_0.restaurant_name = "678910" #raises an Error on attempt to change the name

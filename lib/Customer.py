@@ -6,6 +6,7 @@ class Customer:
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
+        self.fullName = first_name + " " + last_name
         Customer.all(self)
         
     def given_name(self):
@@ -27,9 +28,15 @@ class Customer:
 
     @classmethod
     def all(cls, new_customer_instance):
-        cls.all_instances.append(new_customer_instance)
+        cls.all_instances.append(new_customer_instance.fullName)
         pass
 
-customer1 = Customer("Gad", "Ongoro")
-#customer1.full_name()
-print(Customer.all_instances[0].full_name())
+    @classmethod
+    def print_all_instances(cls):
+        print([fullname for fullname in cls.all_instances])
+
+# uncomment to see magic :)
+customer1 = Customer("Gad", "Ongoro") # Customer case_0
+customer2 = Customer("Muhammad", "Gaddafi") # Customer case_1
+#customer1.full_name() #returns the customer's full name
+# Customer.print_all_instances() #prints a list of all customer names
