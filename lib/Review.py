@@ -44,7 +44,7 @@ class Review(Customer):
         print([review for review in cls.all_reviews])
         pass
 
-# uncomment to see magic :)
+# uncomment to see magic 😄
 my_restaurant_review_0 = Review("Gad", "Spicy", 7) #case_0
 my_restaurant_review_1 = Review("Abdi", "Five_Star", 10) #case_1
 my_restaurant_review_2 = Review("Allahdu", "Big_Square", 8) #case_2

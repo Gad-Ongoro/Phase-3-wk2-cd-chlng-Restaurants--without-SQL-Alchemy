@@ -22,11 +22,9 @@ class Restaurant:
 
     def customers(self):
         # Returns a **unique** list of all customers who have reviewed a particular restaurant
-        count = len(Customer.all_instances)
-        # sorted_customers = Customer.all_instances.sort()     
-        # while count >= 0:                   
-        #     pass
-        print(Customer.all_instances)
+        unique_names = list(set(Customer.all_names))
+        #print(Customer.all_names)
+        print(unique_names)
         pass
 
     @classmethod
@@ -35,11 +33,11 @@ class Restaurant:
 
     restaurant_name = property(name, restaurant_name_setter)
 
-# uncomment to see magic :)
+# uncomment to see magic 😄
 restaurant_0 = Restaurant("Spicy") # Restaurant case_0
 restaurant_1 = Restaurant("Five_Star") # Restaurant case_1
 restaurant_2 = Restaurant("Big_Square") # Restaurant case_1
 # print(restaurant_0.name()) #calling the name() method to display the restaurant name
 # restaurant_0.restaurant_name = "678910" #raises an Error on attempt to change the name
 #print(restaurant_0.reviews()) #returns a list of all reviews for that restaurant
-# restaurant_2.customers()
+# restaurant_2.customers() #Returns a **unique** list of all customers who have reviewed a particular restaurant.

@@ -27,7 +27,7 @@ class Restaurant:
 
     restaurant_name = property(name, restaurant_name_setter)
 
-# uncomment to see magic :)
+# uncomment to see magic 😄
 restaurant_0 = Restaurant("12345") # Restaurant case_0
 # print(restaurant_0.name()) #calling the name() method to display the restaurant name
 
@@ -38,12 +38,14 @@ restaurant_0 = Restaurant("12345") # Restaurant case_0
 """"""
 class Customer:
     all_instances = []
+    all_names = []
 
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
         self.fullName = first_name + " " + last_name
         Customer.all(self)
+        Customer.allNamesHandler(self)
         
     def given_name(self):
         return(self.first_name)
@@ -72,10 +74,20 @@ class Customer:
     def print_all_instances(cls):
         print([fullname.fullName for fullname in cls.all_instances])
 
-# uncomment to see magic :)
+    @classmethod
+    def allNamesHandler(cls, new_customer):
+        cls.all_names.append(new_customer.fullName)
+
+    @classmethod
+    def allNamesPrinter(cls):
+        print([fullName for fullName in cls.all_names])
+
+
+# uncomment to see magic 😄
 customer1 = Customer("Gad", "Ongoro") # Customer case_0
 customer2 = Customer("Muhammad", "Gaddafi") # Customer case_1
 customer3 = Customer("Allahdu", "Jamil") # Customer case_2
+customer4 = Customer("Allahdu", "Jamil") # Customer case_3
 #customer1.full_name() #returns the customer's full name
 #Customer.print_all_instances() #prints a list of all customer names
 """"""
@@ -125,7 +137,7 @@ class Review(Customer):
         print([review for review in cls.all_reviews])
         pass
 
-# uncomment to see magic :)
+# uncomment to see magic 😄
 my_restaurant_review_0 = Review("Gad", "Spicy", 7) #case_0
 my_restaurant_review_1 = Review("Abdi", "Five_Star", 10) #case_1
 my_restaurant_review_2 = Review("Allahdu", "Big_Square", 8) #case_2
