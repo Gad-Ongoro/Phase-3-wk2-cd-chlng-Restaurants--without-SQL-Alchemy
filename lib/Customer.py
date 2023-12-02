@@ -39,5 +39,6 @@ class Customer:
 # uncomment to see magic :)
 customer1 = Customer("Gad", "Ongoro") # Customer case_0
 customer2 = Customer("Muhammad", "Gaddafi") # Customer case_1
+customer3 = Customer("Allahdu", "Jamil") # Customer case_2
 #customer1.full_name() #returns the customer's full name
 #Customer.print_all_instances() #prints a list of all customer names

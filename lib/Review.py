@@ -32,7 +32,7 @@ class Review(Customer):
         pass
 
     def restaurant(self):
-        return(Restaurant.all)
+        return(Restaurant.all_restaurants)
         pass
 
     @classmethod
@@ -45,12 +45,13 @@ class Review(Customer):
         pass
 
 # uncomment to see magic :)
-my_restaurant_review_0 = Review("Gad", "Nairobi", 7) #case_0
-my_restaurant_review_2 = Review("Ongoro", "Kenya", 8) #case_1
+my_restaurant_review_0 = Review("Gad", "Spicy", 7) #case_0
+my_restaurant_review_1 = Review("Abdi", "Five_Star", 10) #case_1
+my_restaurant_review_2 = Review("Allahdu", "Big_Square", 8) #case_2
 
 #my_restaurant_review_2.rest_rating #calling rating() returns a rating of an instance
 #my_restaurant_review_0.rating() #calling rating() returns a rating of an instance
 #print(Review.all_reviews) #prints the object(s) location
 #Review.print_all_reviews() #prints the object(s) location
 # print(my_restaurant_review_0.customer()) # returns the customer object for a review and doesn't change the customer
-print(my_restaurant_review_0.restaurant()) # returns the restaurant object for that given review
+# print(my_restaurant_review_0.restaurant()) # returns the restaurant object for that given review
